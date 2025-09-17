@@ -219,17 +219,6 @@ public:
 
 ---
 
-## Example PlatformIO `platformio.ini`
-```ini
-[env:esp32dev]
-platform = espressif32
-board = esp32dev
-framework = arduino
-monitor_speed = 115200
-```
-
----
-
 ## Author & License
 - **Author:** Yair Yamin  
 - **License:** MIT‑style or project‑specific (fill in your choice)
