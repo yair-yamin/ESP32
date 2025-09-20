@@ -28,7 +28,7 @@
  */
 ADS1115::ADS1115(TwoWire* i2c, uint8_t address):
 i2c_handle(i2c), i2c_address(address) {
-   Reg = new uint16_t[4];
+   memset(Reg,0,sizeof(Reg)); // Clear register buffer
 }
 
 /**
@@ -36,7 +36,6 @@ i2c_handle(i2c), i2c_address(address) {
  * @details Deallocates the dynamically allocated register buffer
  */
 ADS1115::~ADS1115() {
-    delete[] Reg;
 }
 
 /**

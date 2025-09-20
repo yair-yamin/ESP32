@@ -100,7 +100,7 @@ class ADS1115 {
     uint8_t i2c_address;
     sChannel_t channel;
     uint8_t ptr_reg;
-    uint16_t *Reg; // Register buffer
+    uint16_t Reg[4]; // Register buffer
 };
 
 #endif // ADS1115_H

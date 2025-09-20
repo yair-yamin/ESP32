@@ -85,14 +85,14 @@ public:
     esp_err_t SetTime(void);
     ds3231_time_t GetTime(void);
     esp_err_t SetDOW(void);
-    DOW_t GetDOW(void);
+    DOW_t GetDOW(void)const;
     esp_err_t SetDate(void);
     ds3231_date_t GetDate(void);
     esp_err_t SetAlarm1(sMode_t mode,const sAlram_t alr);
     esp_err_t SetAlarm2(sMode_t mode,const sAlram_t alr);
     sAlram_t GetAlarm1(void);
     sAlram_t GetAlarm2(void);
-    float GetTemp(void);
+    float GetTemp(void)const;
     esp_err_t GetControlRegister(uint8_t *ctl);
     esp_err_t ReadStatus(uint8_t * stat);
     esp_err_t WriteStatus(void);
@@ -106,7 +106,7 @@ private:
     ds3231_time_t time;
     ds3231_date_t date;
     DOW_t dayOfWeek;
-    uint8_t *Reg; // Registers buffer
+    uint8_t Reg[19]; // Registers buffer
     sAlram_t alarm1;
     sAlram_t alarm2;
     float temp;

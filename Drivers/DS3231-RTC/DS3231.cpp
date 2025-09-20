@@ -48,13 +48,12 @@
 DS3231::DS3231(TwoWire* handle,uint8_t addr,const ds3231_time_t time,const ds3231_date_t date,const DOW_t dow):
  i2c_handle(handle),i2c_address(addr), time(time),date(date),dayOfWeek(dow) 
 {
-    Reg = new uint8_t[19]();
+    // Initialize all registers to 0
+    memset(Reg, 0, sizeof(Reg));
 };
 
 DS3231::~DS3231()
-{
-    delete[] Reg;
-}
+{}
 
 /**
  * @brief Initializes the DS3231 RTC module
